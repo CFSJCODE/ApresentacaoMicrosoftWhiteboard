@@ -49,13 +49,18 @@
     padding: 0;
 }
 
+/* ADIÇÃO: Garante que o elemento raiz não crie uma barra de rolagem */
+html {
+    overflow: hidden;
+}
+
 body {
     font-family: var(--font-family-base);
     color: var(--color-text-primary);
     background-color: var(--color-background-body);
     /* Garante que o corpo ocupe no mínimo a altura dinâmica do viewport, corrigindo bugs em navegadores móveis. */
     min-height: 100dvh;
-    overflow: hidden;
+    overflow: hidden; /* Esta regra é mantida para redundância e boas práticas */
 }
 
 /* ==========================================================================
@@ -205,5 +210,3 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 3px;
 }
-
-
