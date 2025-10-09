@@ -1,0 +1,208 @@
+/*
+ * Arquitetura CSS com Foco em Design Intrínseco, Resiliência e Escalabilidade
+ * Autor: Gemini
+ * Data: 08/10/2025
+ * Descrição: Este arquivo implementa uma metodologia de design fluido e adaptativo de alto nível,
+ * utilizando Design Tokens, Unidades Lógicas, Viewports Dinâmicos e Áreas de Segurança
+ * para garantir uma renderização impecável em qualquer resolução de tela.
+ */
+
+/* ==========================================================================
+   1. DESIGN TOKENS E CONFIGURAÇÕES GLOBAIS (:root)
+   ========================================================================== */
+:root {
+    /* -- Cores -- */
+    --color-primary: #005A9E;
+    --color-secondary: #FFC72C;
+    --color-accent: #4A90E2;
+    --color-background-body: #111827;
+    --color-background-surface: #1F2937;
+    --color-text-primary: #F9FAFB;
+
+    /* -- Tipografia -- */
+    --font-family-base: 'Inter', sans-serif;
+    /* Tipografia fluida com fórmula aprimorada (BASE + FLUIDO) para melhor escalabilidade. */
+    --font-size-heading: clamp(1.25rem, 1rem + 2.5vw, 2.5rem);
+    --font-size-body: clamp(0.875rem, 0.75rem + 1vw, 1.125rem);
+
+    /* -- Espaçamento -- */
+    /* Unidades de espaçamento fluidas com a mesma fórmula aprimorada. */
+    --space-fluid: clamp(1.5rem, 1rem + 3vw, 3rem);
+
+    /* -- Raios de Borda -- */
+    --radius-card: 1.5rem;
+
+    /* -- Animações -- */
+    --animation-duration-slow: 28s;
+    --animation-duration-fast: 22s;
+    --animation-duration-border: 8s;
+}
+
+/* ==========================================================================
+   2. RESET BÁSICO E ESTILOS GLOBAIS
+   ========================================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family-base);
+    color: var(--color-text-primary);
+    background-color: var(--color-background-body);
+    /* Garante que o corpo ocupe no mínimo a altura dinâmica do viewport, corrigindo bugs em navegadores móveis. */
+    min-height: 100dvh;
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   3. LAYOUT PRINCIPAL (CONTAINER)
+   ========================================================================== */
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100dvh; /* Utiliza a altura dinâmica do viewport. */
+    /* Adiciona espaçamento que respeita as áreas de segurança do dispositivo (notches, ilhas dinâmicas, etc.). */
+    padding: env(safe-area-inset-top, 1rem) env(safe-area-inset-right, 1rem) env(safe-area-inset-bottom, 1rem) env(safe-area-inset-left, 1rem);
+}
+
+/* ==========================================================================
+   4. COMPONENTE: GLASS CARD (COM BORDA NEON ANIMADA)
+   ========================================================================== */
+.glass-card {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    padding: var(--space-fluid);
+    border-radius: var(--radius-card);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    max-inline-size: 80ch;
+    width: 100%;
+    
+    /* Arquitetura de Componente Autocontido para Gerenciar Overflow */
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100dvh - 2rem); /* Previne que o card seja maior que a tela */
+}
+
+/* Pseudo-elemento ::before: Gradiente animado que forma a BORDA NEON. */
+.glass-card::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    inset: -150%;
+    background: conic-gradient(
+        from 180deg at 50% 50%,
+        var(--color-primary),
+        var(--color-secondary),
+        var(--color-accent),
+        var(--color-secondary),
+        var(--color-primary)
+    );
+    animation: rotate-border var(--animation-duration-border) linear infinite;
+}
+
+/* Pseudo-elemento ::after: Fundo opaco que mascara o centro do gradiente. */
+.glass-card::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 2px;
+    background: var(--color-background-surface);
+    border-radius: calc(var(--radius-card) - 2px);
+}
+
+/* ==========================================================================
+   5. ELEMENTOS GRÁFICOS E ANIMAÇÕES
+   ========================================================================== */
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.5;
+    z-index: -3;
+    will-change: transform;
+}
+
+#blob1 {
+    inline-size: clamp(200px, 40vi, 400px);
+    block-size: clamp(200px, 40vi, 400px);
+    inset-block-start: -10%;
+    inset-inline-start: -15%;
+    animation: move var(--animation-duration-fast) infinite ease-in-out;
+}
+
+#blob2 {
+    inline-size: clamp(150px, 30vi, 350px);
+    block-size: clamp(150px, 30vi, 350px);
+    inset-block-end: -10%;
+    inset-inline-end: -15%;
+    animation: move var(--animation-duration-slow) infinite ease-in-out reverse;
+}
+
+@keyframes move {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(40px, -60px) scale(1.2); }
+    50% { transform: translate(-30px, 50px) scale(0.9); }
+    75% { transform: translate(50px, 20px) scale(1.1); }
+}
+
+@keyframes rotate-border {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animações de transição de página */
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+.fade-out-down {
+    animation: fadeOutDown 0.6s ease-in forwards;
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeOutDown {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(20px); }
+}
+
+/* ==========================================================================
+   6. CLASSES DE TIPOGRAFIA E UTILITÁRIOS
+   ========================================================================== */
+.card-title {
+    font-size: var(--font-size-heading);
+    line-height: 1.2;
+}
+
+.card-body,
+.card-list-item {
+    font-size: var(--font-size-body);
+}
+
+/* Classe utilitária para a área de conteúdo rolável */
+.card-content-scrollable {
+    overflow-y: auto; /* Habilita a rolagem vertical quando o conteúdo excede o espaço */
+    flex-shrink: 1; 
+    padding-right: 0.5rem; /* Evita que o conteúdo cole na barra de rolagem */
+}
+
+/* Estilização da barra de rolagem para navegadores WebKit (Chrome, Safari) */
+.card-content-scrollable::-webkit-scrollbar {
+    width: 6px;
+}
+.card-content-scrollable::-webkit-scrollbar-track {
+    background: transparent;
+}
+.card-content-scrollable::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+

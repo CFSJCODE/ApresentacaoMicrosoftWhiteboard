@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pontos Negativos | Microsoft Whiteboard</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Folha de Estilos Personalizada -->
+    <link rel="stylesheet" href="style_pontosnegativos.css">
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Fundo dinâmico com blobs -->
+    <div id="blob1" class="blob bg-red-600"></div>
+    <div id="blob2" class="blob bg-indigo-400"></div>
+
+    <!-- Container Principal -->
+    <main id="main-container" class="relative min-h-screen grid place-items-center p-4">
+
+        <!-- Card de Conteúdo com Efeito Glass -->
+        <div id="content-card" class="glass-card fade-in-up w-full max-w-3xl rounded-3xl p-8 md:p-12 text-center flex flex-col items-center">
+
+            <!-- Título -->
+            <h1 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-4">
+                Pontos Negativos do Microsoft Whiteboard
+            </h1>
+
+            <!-- Descrição Principal -->
+            <p class="mt-2 max-w-2xl text-lg text-gray-200">
+                Apesar de ser uma ferramenta robusta, o Whiteboard possui algumas limitações que podem impactar certos fluxos de trabalho e usuários.
+            </p>
+
+            <!-- Divisor -->
+            <hr class="w-1/4 my-8 border-gray-600">
+
+            <!-- Seção de Pontos (Conteúdo Rolável) -->
+            <div class="card-content-scrollable text-left w-full max-w-xl">
+                 <ul class="space-y-4 list-inside">
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-red-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span><strong>Desempenho em Quadros Grandes:</strong> Quadros muito complexos, com centenas de objetos, podem sofrer com lentidão e travamentos, especialmente em dispositivos menos potentes.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-red-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span><strong>Funcionalidades Offline Limitadas:</strong> A experiência completa depende de uma conexão estável com a internet. O uso offline é restrito e não permite colaboração.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-red-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span><strong>Curva de Aprendizagem:</strong> Para novos usuários, dominar todas as ferramentas, atalhos e recursos avançados pode exigir um tempo de adaptação.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-red-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span><strong>Exportação e Formatos:</strong> As opções para exportar os quadros são básicas. Faltam formatos vetoriais (como SVG) ou de maior qualidade, o que pode ser um problema para designers.</span>
+                    </li>
+                     <li class="flex items-start">
+                        <svg class="w-6 h-6 text-red-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span><strong>Menos Integrações Específicas:</strong> Comparado a concorrentes focados em nichos (como Miro e Mural), pode ter menos integrações com ferramentas de gestão de projetos e design.</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Botões de Navegação -->
+            <div class="flex items-center space-x-4 mt-10">
+                <a href="../PontosPositivos/pontospositivos.html" id="prev-btn" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-gray-500 focus:ring-opacity-50">
+                    Anterior
+                </a>
+                <a href="../Landing Page/index.html" id="home-btn" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-blue-500/50 transform hover:scale-105 transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-blue-400 focus:ring-opacity-50">
+                    Voltar Para O Início
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Script da página -->
+    <script src="pontosnegativos.js"></script>
+</body>
+</html>

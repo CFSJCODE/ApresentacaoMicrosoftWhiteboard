@@ -1,0 +1,42 @@
+# Workflow para implantar conteúdo estático no GitHub Pages
+name: Deploy Landing Page to GitHub Pages
+
+on:
+  # Executa em pushes para a branch principal (geralmente 'main' ou 'master')
+  push:
+    branches: ["main"]
+
+  # Permite que você execute este workflow manualmente na aba "Actions" do GitHub
+  workflow_dispatch:
+
+# Define as permissões do GITHUB_TOKEN para permitir o deploy no GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Permite apenas um deploy concorrente
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Tarefa de deploy
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Define o diretório a ser publicado
+          path: './Landing Page'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

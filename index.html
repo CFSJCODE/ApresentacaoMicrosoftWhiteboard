@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação: Microsoft Whiteboard | HUB de Extensão</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Folha de Estilos Personalizada -->
+    <link rel="stylesheet" href="style_landingpage.css">
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Fundo dinâmico com blobs -->
+    <div id="blob1" class="blob bg-blue-600"></div>
+    <div id="blob2" class="blob bg-yellow-400"></div>
+
+    <!-- Container Principal: Usando 'grid' e 'place-items-center' para uma centralização robusta -->
+    <main id="main-container" class="relative min-h-screen grid place-items-center p-4 transition-opacity duration-500">
+
+        <!-- Card de Apresentação com Efeito Glass -->
+        <div id="presentation-card" class="glass-card fade-in-up w-full max-w-2xl rounded-3xl p-8 md:p-12 text-center flex flex-col items-center">
+
+            <!-- Logo HUB -->
+            <div class="mb-6">
+                <svg width="150" height="50" viewBox="0 0 300 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="40" cy="40" r="12" stroke="#FFC72C" stroke-width="4"/>
+                    <circle cx="90" cy="15" r="8" fill="#005A9E"/>
+                    <circle cx="90" cy="65" r="8" fill="#005A9E"/>
+                    <path d="M51.5 40H78" stroke="white" stroke-width="3"/>
+                    <path d="M82 26L60 36" stroke="white" stroke-width="3"/>
+                    <path d="M82 54L60 44" stroke="white" stroke-width="3"/>
+                    <text x="130" y="35" font-family="Inter, sans-serif" font-size="28" font-weight="bold" fill="white">HUB DE</text>
+                    <text x="130" y="65" font-family="Inter, sans-serif" font-size="28" font-weight="bold" fill="white">EXTENSÃO</text>
+                </svg>
+            </div>
+
+            <!-- Título Principal -->
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
+                Apresentação do Microsoft Whiteboard
+            </h1>
+
+            <!-- Subtítulo -->
+            <p class="mt-4 max-w-md text-lg text-gray-300">
+                Desbloqueie a colaboração e transforme suas ideias em realidade na tela infinita.
+            </p>
+
+            <!-- Árvore de Ideias (SVG inspirado no slide) -->
+            <div class="mt-8 mb-8 w-48 h-48 relative">
+                 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Tronco -->
+                    <path d="M100 200 V 100" stroke="#E5E7EB" stroke-width="8" stroke-linecap="round"/>
+                    <!-- Galhos -->
+                    <path d="M100 100 L 60 60" stroke="#E5E7EB" stroke-width="6" stroke-linecap="round"/>
+                    <path d="M100 100 L 140 60" stroke="#E5E7EB" stroke-width="6" stroke-linecap="round"/>
+                    <path d="M100 150 L 150 120" stroke="#E5E7EB" stroke-width="6" stroke-linecap="round"/>
+                    <path d="M100 150 L 50 120" stroke="#E5E7EB" stroke-width="6" stroke-linecap="round"/>
+                    <path d="M60 60 L 40 20" stroke="#E5E7EB" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M140 60 L 160 20" stroke="#E5E7EB" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M50 120 L 20 100" stroke="#E5E7EB" stroke-width="4" stroke-linecap="round"/>
+                     <path d="M150 120 L 180 100" stroke="#E5E7EB" stroke-width="4" stroke-linecap="round"/>
+                    <!-- Folhas (Círculos) -->
+                    <circle cx="160" cy="15" r="10" fill="#FFC72C"/>
+                    <circle cx="40" cy="15" r="15" fill="#FFC72C"/>
+                    <circle cx="70" cy="20" r="8" fill="#FFC72C"/>
+                    <circle cx="110" cy="30" r="12" fill="#FFC72C"/>
+                    <circle cx="20" cy="95" r="11" fill="#005A9E"/>
+                    <circle cx="55" cy="90" r="14" fill="#005A9E"/>
+                    <circle cx="145" cy="90" r="9" fill="#005A9E"/>
+                    <circle cx="180" cy="95" r="13" fill="#005A9E"/>
+                     <circle cx="120" cy="70" r="7" fill="#005A9E"/>
+                </svg>
+            </div>
+            
+            <!-- Botão de Ação -->
+            <a href="#" id="start-btn" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-blue-500/50 transform hover:scale-105 transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-blue-400 focus:ring-opacity-50">
+                Iniciar Apresentação
+            </a>
+             <!-- Footer com logo PUC Minas -->
+            <div class="mt-10 text-xs text-gray-400 flex items-center">
+                 <svg class="mr-2" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17v-7h-2v-2h2V8c0-2.21 1.79-4 4-4h2v2h-2c-1.1 0-2 .9-2 2v2h3l-.5 2h-2.5v7h-2z" opacity="0.5"></path></svg>
+                <span>Pontifícia Universidade Católica de Minas Gerais</span>
+            </div>
+        </div>
+        
+        <!-- Mensagem Pós-Clique -->
+        <div id="started-message" class="text-center opacity-0 transition-opacity duration-500 absolute pointer-events-none">
+             <h2 class="text-3xl font-bold">Apresentação Iniciada!</h2>
+             <p class="text-gray-300 mt-2">Por favor, prossiga para a tela principal.</p>
+        </div>
+
+    </main>
+
+    <!-- Script Personalizado -->
+    <script src="script_landingpage.js"></script>
+</body>
+</html>
+

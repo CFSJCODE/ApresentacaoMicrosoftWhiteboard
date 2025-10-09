@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como o Whiteboard Auxilia o HUB? | HUB de Extensão</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Folha de Estilos Personalizada -->
+    <link rel="stylesheet" href="stylecomoauxiliahub.css">
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Fundo dinâmico com blobs -->
+    <div id="blob1" class="blob bg-blue-600"></div>
+    <div id="blob2" class="blob bg-yellow-400"></div>
+
+    <!-- Container Principal - Usando Flexbox para centralização e controle de overflow -->
+    <main id="main-container" class="relative flex flex-col items-center justify-center min-h-screen p-4">
+
+        <!-- Card de Conteúdo com Efeito Glass -->
+        <div id="hub-card" class="glass-card fade-in-up w-full max-w-3xl rounded-3xl text-center flex flex-col items-center">
+
+            <!-- Título com classe para estilo fluido -->
+            <h1 class="card-title font-extrabold text-white tracking-tight mb-4">
+                Como O Whiteboard Pode Auxiliar O HUB De Extensão?
+            </h1>
+
+            <!-- Descrição com classe para estilo fluido -->
+            <p class="card-body mt-2 max-w-2xl text-gray-200">
+                Principalmente nas reuniões semanais de alinhamento, permitindo que ideias, explicações e conhecimentos sejam transmitidos de forma colaborativa e visual para toda a equipe.
+            </p>
+
+            <!-- Divisor -->
+            <hr class="w-1/4 my-6 md:my-8 border-gray-600">
+
+            <!-- Seção de Casos de Uso -->
+            <div class="text-left w-full max-w-lg">
+                 <h2 class="text-xl font-bold text-center mb-4">Casos de Uso Principais:</h2>
+                 <ul class="space-y-4">
+                      <li class="flex items-start">
+                           <svg class="w-6 h-6 text-yellow-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7.C14 5 16.09 5.777 17.657 7.343A8 8 0 0117.657 18.657z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1014.12 11.88l-4.242 4.242z"></path></svg>
+                           <span class="card-list-item"><strong>Brainstorming de Projetos:</strong> Organize ideias e fluxos de trabalho de forma visual e intuitiva.</span>
+                      </li>
+                      <li class="flex items-start">
+                         <svg class="w-6 h-6 text-yellow-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                         <span class="card-list-item"><strong>Planejamento Estratégico:</strong> Crie mapas mentais e cronogramas para alinhar os próximos passos da equipe.</span>
+                    </li>
+                    <li class="flex items-start">
+                         <svg class="w-6 h-6 text-yellow-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                         <span class="card-list-item"><strong>Onboarding de Novos Membros:</strong> Apresente a estrutura e os processos do HUB de forma clara e interativa.</span>
+                    </li>
+                 </ul>
+            </div>
+            
+            <!-- Botões de Navegação -->
+            <div class="flex flex-col sm:flex-row items-center w-full sm:w-auto sm:space-x-4 mt-8 md:mt-10">
+                <a href="../OQueE/OQueE.html" id="back-btn" class="w-full sm:w-auto text-center justify-center bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-gray-500 focus:ring-opacity-50 mb-3 sm:mb-0">
+                    Voltar
+                </a>
+                <a href="../PontosPositivos/pontospositivos.html" id="next-btn" class="w-full sm:w-auto text-center justify-center bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-blue-500/50 transform hover:scale-105 transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-blue-400 focus:ring-opacity-50">
+                    Próximo
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Script da página "HUB" -->
+    <script src="comoauxiliahub.js"></script>
+</body>
+</html>
+

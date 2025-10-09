@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Que é o Whiteboard? | HUB de Extensão</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Folha de Estilos Personalizada -->
+    <link rel="stylesheet" href="style_oquee.css">
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Fundo dinâmico com blobs -->
+    <div id="blob1" class="blob bg-blue-600"></div>
+    <div id="blob2" class="blob bg-yellow-400"></div>
+
+    <!-- Container Principal -->
+    <main id="main-container" class="relative min-h-screen grid place-items-center p-4">
+
+        <!-- Card de Conteúdo com Efeito Glass -->
+        <div id="about-card" class="glass-card fade-in-up w-full max-w-3xl rounded-3xl p-8 md:p-12 text-center flex flex-col items-center">
+
+            <!-- Título -->
+            <h1 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-4">
+                O Que é o Microsoft Whiteboard?
+            </h1>
+
+            <!-- Descrição Principal -->
+            <p class="mt-2 max-w-2xl text-lg text-gray-200">
+                É uma tela digital, interativa e colaborativa de formato livre, focada para que equipes possam idealizar, criar e colaborar visualmente através da nuvem, em tempo real, usando caneta, toque ou teclado.
+            </p>
+
+            <!-- Divisor -->
+            <hr class="w-1/4 my-8 border-gray-600">
+
+            <!-- Seção de Recursos -->
+            <div class="text-left w-full max-w-md">
+                 <h2 class="text-xl font-bold text-center mb-4">Principais Recursos:</h2>
+                 <ul class="space-y-3 list-inside">
+                     <li class="flex items-start">
+                         <svg class="w-6 h-6 text-blue-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                         <span>Criação de quadros brancos digitais com uma tela infinita.</span>
+                     </li>
+                     <li class="flex items-start">
+                        <svg class="w-6 h-6 text-blue-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span>Adição de notas adesivas, formas, imagens e documentos.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-blue-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span>Possibilidade de várias pessoas colaborarem no mesmo quadro ao mesmo tempo.</span>
+                    </li>
+                 </ul>
+            </div>
+            
+            <!-- Botões de Navegação -->
+            <div class="flex items-center space-x-4 mt-10">
+                <a href="../Landing Page/index.html" id="back-btn" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-gray-500 focus:ring-opacity-50">
+                    Voltar
+                </a>
+                <a href="../ComoMicrosoftWhiteboardAuxiliaHUB/comoauxiliahub.html" id="continue-btn" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-blue-500/50 transform hover:scale-105 transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-blue-400 focus:ring-opacity-50">
+                    Próximo
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Script da página -->
+    <script src="OQueE.js"></script>
+</body>
+</html>
+
