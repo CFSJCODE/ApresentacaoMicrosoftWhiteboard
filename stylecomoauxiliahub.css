@@ -55,7 +55,7 @@ body {
     background-color: var(--color-background-body);
     /* Garante que o corpo ocupe no mínimo a altura dinâmica do viewport, corrigindo bugs em navegadores móveis. */
     min-height: 100dvh;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 /* ==========================================================================
@@ -205,4 +205,5 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 3px;
 }
+
 
